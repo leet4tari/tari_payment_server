@@ -1,14 +1,14 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Notify script for Tari Payment Server Hot wallet.
 
 # Install this script in `$HOME/.taritools/tps_notify.sh` and make it executable.
 
 # post to a webhook url
-BINPATH=${TARITOOLS_PATH:-$HOME/.cargo/bin}
-BIN=$BINPATH/taritools
-PROFILE="TPS Hot Wallet"
-LOGFILE=$HOME/.taritools/tps_notify.log
-REPLAYFILE=$HOME/.taritools/tps_notify_replay.log
+BINPATH=${TARITOOLS_PATH:-${HOME}/.cargo/bin}
+BIN=${BINPATH}/taritools
+PROFILE=${PROFILE:-"TPS Hot Wallet"}
+LOGFILE=${LOGFILE:-${HOME}/.taritools/tps_notify.log}
+REPLAYFILE=${REPLAYFILE:-${HOME}/.taritools/tps_notify.reply}
 
 register_received_payment() {
   # Log the command we're about to invoke for replays
